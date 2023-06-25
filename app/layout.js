@@ -1,5 +1,9 @@
+
+import Providers from './Providers'
+import ThemeButton from './components/ThemeButton'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,8 +14,25 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
+      <body className={inter.className}>
+        <Providers>
+          <header className="py-6">
+            <nav className="container flex items-center justify-between border">
+              <ul className="flex gap-6">
+                <li>
+                  <Link href="/">home</Link>
+                  <Link href="/about">about</Link>
+                </li>
+              </ul>
+              <ThemeButton />
+            </nav>
+            
+          </header>
+          <main>{children}</main>
+          <footer></footer>
+        </Providers>
+      </body>
     </html>
   )
 }
