@@ -23,6 +23,10 @@ const Header = () => {
               href="/contact"
               className={currentRoute === "/contact" ? "active-link" : "non-active-link"}
             >contact</Link>
+            <Link 
+              href="/work"
+              className={currentRoute === "/work" ? "active-link" : "non-active-link"}
+            >work</Link>
           </li>
         </ul>
         <ThemeButton />
