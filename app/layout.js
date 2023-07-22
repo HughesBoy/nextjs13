@@ -1,13 +1,8 @@
-"use client"
-
 import Providers from './Providers'
 import ThemeButton from './components/ThemeButton'
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Link from 'next/link';
-//import Header from './components/header';
-import { usePathname } from 'next/navigation'
-
+import Header from './components/Header';
 const inter = Inter({ subsets: ['latin'] })
 
 // export const metadata = {
@@ -17,39 +12,13 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
 
-  const currentRoute = usePathname();
 
   return (
     <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
       <body className={inter.className}>
         <Providers>
-        <header className="header">
-          <nav className="nav-container">
-            <ul className="list-container">
-              <li>
-                <Link 
-                  href="/"
-                  className={currentRoute === "/" ? "active-link" : "non-active-link"}  
-                  >home</Link>
-                <Link 
-                  href="/about"
-                  className={currentRoute === "/about" ? "active-link" : "non-active-link"}
-                >about</Link>
-                <Link 
-                  href="/contact"
-                  className={currentRoute === "/contact" ? "active-link" : "non-active-link"}
-                >contact</Link>
-                <Link 
-                  href="/work"
-                  className={currentRoute === "/work" ? "active-link" : "non-active-link"}
-                >work</Link>
-              </li>
-            </ul>
-            <ThemeButton />
-          </nav>
-            
-        </header>
-
+        
+          <Header />
 
           <main>{children}</main>
           <footer></footer>

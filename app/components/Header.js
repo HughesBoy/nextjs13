@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import ThemeButton from './ThemeButton';
 import Link from 'next/link';
@@ -41,15 +42,3 @@ const Header = () => {
 
 export default Header
 
-{/* <header className="py-6">
-      <nav className="container flex items-center justify-between border">
-        <ul className="flex gap-6">
-          <li>
-            <Link href="/">home</Link>
-            <Link href="/about">about</Link>
-          </li>
-        </ul>
-        <ThemeButton />
-      </nav>
-            
-    </header> */}
